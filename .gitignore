@@ -37,5 +37,12 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+<<<<<<< HEAD
 # Visual Studio Code folder (and files) that are created
 .vscode
+=======
+.DS_Store
+
+# disregard all config files
+test.db
+>>>>>>> 092674f4a70d5e4dc3fccb5a7b5a7a8125f92b09

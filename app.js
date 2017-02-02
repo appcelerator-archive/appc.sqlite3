@@ -11,7 +11,7 @@ server.addModel(Arrow.Model.extend('tbray', {
 		// TODO: Add fields to it.
 		title: {type: String}
 	},
-	connector: 'appc.sqlite'
+	connector: 'appc.sqlite3'
 }));
 
 server.start();
