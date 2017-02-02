@@ -1,5 +1,5 @@
 {
-    "name": "appc.sqlite",
+    "name": "appc.sqlite3",
     "description": "",
     "version": "1.0.0",
     "author": "Alexandrina Karakehayova",
@@ -9,6 +9,9 @@
         "appcelerator",
         "arrow"
     ],
+    "engines": {
+        "node": "7.3.0"
+    },
     "repository": {},
     "private": true,
     "dependencies": {
@@ -16,7 +19,7 @@
         "lodash": "^3.10.1",
         "pkginfo": "^0.3.1",
         "semver": "^5.0.3",
-        "sqlite3":"^3.1.8"
+        "sqlite3": "^3.1.8"
     },
     "devDependencies": {
         "grunt": "^0.4.5",
