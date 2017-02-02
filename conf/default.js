@@ -86,9 +86,9 @@ module.exports = {
 
 	// your connector configuration goes here
 	connectors: {
-		'appc.sqlite': {
+		'appc.sqlite3': {
 			db: 'test.db',
-			path: './',
+			path: './data/',
 			modelAutogen: true,
 			generateModelsFromSchema: true
 		}
