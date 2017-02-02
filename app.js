@@ -9,7 +9,8 @@ var Arrow = require('arrow'),
 server.addModel(Arrow.Model.extend('tbray', {
 	fields: {
 		// TODO: Add fields to it.
-		title: {type: String}
+		Name: {type: String},
+		Age: {type: Number}
 	},
 	connector: 'appc.sqlite3'
 }));
