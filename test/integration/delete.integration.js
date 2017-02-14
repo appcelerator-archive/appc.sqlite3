@@ -64,7 +64,8 @@ describe('Detele Api tests', (done) => {
                 "auth": auth,
             }, function (err, response, body) {
                 should(response.statusCode).be.equal(200);
-                should(body.user).be.Array.empty;
+                body = JSON.parse(body);
+                (body.flower).should.be.empty;
                 next();
             });
         });
@@ -103,9 +104,22 @@ describe('Detele Api tests', (done) => {
 
         it('should delete all records', function (next) {
             request(options, function (err, response, body) {
-                console.log('Body: ' + body);
-                console.log('Response' + response);
                 should(response.statusCode).be.equal(204);
+                next();
+            });
+        });
+
+        it('should delete the correct record', function (next) {
+            request({
+                "url": urlToHit + '/api/appc.sqlite3/flowers',
+                "method": "GET",
+                "auth": auth,
+            }, function (err, response, body) {
+                should(response.statusCode).be.equal(200);
+                if(typeof body === 'string'){
+                    body = JSON.parse(body);
+                }
+                should(body.flowers.length).be.equal(0);
                 next();
             });
         });
@@ -125,6 +139,5 @@ describe('Detele Api tests', (done) => {
             next();
         });
     });
-
     done;
 });
