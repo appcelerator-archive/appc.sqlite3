@@ -15,13 +15,13 @@ Set the configuration object in your ``conf/default.js`` file:
 ```javascript
 connectors: {
     'appc.sqlite3': {
-	db: '<database filename>',
-	path: '/path to the db file/',
+	    db: '<database filename>',
+	    path: '/path to the db file/',
         dbConfiguration: {
             ...
         },
-	modelAutogen: true,
-	generateModelsFromSchema: true
+	    modelAutogen: true,
+	    generateModelsFromSchema: true
     }
 }
 ```
