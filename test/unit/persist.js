@@ -93,11 +93,7 @@ describe('Persist', () => {
                     next();
                 }
             });
-
-
-
         });
-
     });
 
     it('should delete all objects', (next) => {

@@ -7,7 +7,6 @@ var should = require('should'),
     _ = require('underscore'),
     connector = require('../connector.mock.js'),
     connect = require('../../lib/utils/connectAndDisconnect'),
-
     Arrow = require('Arrow');
 
 describe('Distinct', () => {
