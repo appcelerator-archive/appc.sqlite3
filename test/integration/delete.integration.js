@@ -90,5 +90,41 @@ describe('Detele Api tests', (done) => {
         });
         done;
     });
+
+    describe('DeleteAll Correct data tests', function (next) {
+        before(function (next) {
+            options = {
+                "url": urlToHit + '/api/appc.sqlite3/flowers',
+                "method": "DELETE",
+                "auth": auth,
+            };
+            next();
+        });
+
+        it('should delete all records', function (next) {
+            request(options, function (err, response, body) {
+                console.log('Body: ' + body);
+                console.log('Response' + response);
+                should(response.statusCode).be.equal(204);
+                next();
+            });
+        });
+        done;
+    });
+
+    after(function (next) {
+        request({
+            "url": urlToHit + '/api/appc.sqlite3/flowers',
+            "method": "POST",
+            "headers": {
+                'content-type': 'multipart/form-data'
+            },
+            "auth": auth,
+            "formData": { name: "Snowdrop", family: "Amaryllidaceae" }
+        }, function (err, response, body) {
+            next();
+        });
+    });
+
     done;
 });
