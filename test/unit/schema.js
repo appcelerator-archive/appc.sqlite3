@@ -14,7 +14,7 @@ describe('Schema', () => {
 
     it('should get schema', (next) => {
         should(utils.getSchema(db, function (err, schema) {
-            should(err).be.not.ok;
+            should(err).be.not.ok();
             should(schema).be.type('object');
         }));
         next();
@@ -22,7 +22,7 @@ describe('Schema', () => {
 
     it('should get tables', (next) => {
         should(utils.getTables(db, function (err, tables) {
-            should(err).be.not.ok;
+            should(err).be.not.ok();
             should(tables).is.Array;
             (tables.length).should.be.equal(5);
         }));

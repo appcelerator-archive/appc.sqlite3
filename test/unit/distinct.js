@@ -21,16 +21,16 @@ describe('Distinct', () => {
             age: 15,
             email: 'ohlio@gmail.com'
         };
-        
+
         _model.create(newModel, (_error, _instance) => {
-            should(_error).be.not.ok;
-            should(_instance).be.ok;
+            should(_error).be.not.ok();
+            should(_instance).be.ok();
         });
-        
+
         _model.findAll(function (err, result) {
-            should(err).be.not.ok;
+            should(err).be.not.ok();
             _model.distinct('name', {}, (error, data) => {
-                should(error).be.not.ok;
+                should(error).be.not.ok();
                 should(data.length < result.length).be.true();
             });
             next();

@@ -26,8 +26,8 @@ describe('Connector CREATE and UPDATE', () => {
         const __model = Arrow.Model.getModel('appc.sqlite3/Snails');
 
         __model.create(newModel, (_error, _instance) => {
-            should(_error).be.not.ok;
-            should(_instance).be.ok;
+            should(_error).be.not.ok();
+            should(_instance).be.ok();
             id = _instance.getPrimaryKey();
             __instance = _instance;
             next();
@@ -43,8 +43,8 @@ describe('Connector CREATE and UPDATE', () => {
             email: "rachael@snail.com"
         };
         _model.upsert(id, newObject, (err, resp) => {
-            should(err).not.be.ok;
-            should(resp).be.ok;
+            should(err).not.be.ok();
+            should(resp).be.ok();
             next();
         });
     });
@@ -52,8 +52,8 @@ describe('Connector CREATE and UPDATE', () => {
     after("should be able to delete objects", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
         _model.delete(__instance, (err, resp) => {
-            should(err).not.be.ok;
-            should(resp).be.ok;
+            should(err).not.be.ok();
+            should(resp).be.ok();
             next();
         });
     });
@@ -66,13 +66,13 @@ describe('Connector CREATE and UPDATE', () => {
         const __model = Arrow.Model.getModel('appc.sqlite3/Users');
 
         __model.create(newModel, (_error, _instance) => {
-            should(_error).be.not.ok;
-            should(_instance).be.ok;
+            should(_error).be.not.ok();
+            should(_instance).be.ok();
         });
 
         __model.deleteAll(function (err, resp) {
-            should(err).not.be.ok;
-            should(resp).be.ok;
+            should(err).not.be.ok();
+            should(resp).be.ok();
             next();
         });
     });

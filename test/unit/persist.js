@@ -61,7 +61,7 @@ describe('Persist', () => {
             }
             else {
                 persist.update(table_name, this.lastID, db, updatedObject, function (err, data) {
-                    should(err).not.be.ok;
+                    should(err).not.be.ok();
                 });
 
                 retrieve.findById(db, table_name, this.lastID, function (err, data) {

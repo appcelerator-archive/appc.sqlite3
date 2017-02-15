@@ -19,8 +19,8 @@ describe('Connector query', () => {
             where: { '$gt': { Age: 20 } }
         };
         _model.query(options, (err, resp) => {
-            should(err).not.be.ok;
-            should(resp).be.ok;
+            should(err).not.be.ok();
+            should(resp).be.ok();
             should(resp).be.Array;
             next();
         });
@@ -32,8 +32,8 @@ describe('Connector query', () => {
             where: { '$eq': { Age: 25 } }
         };
         _model.query(options, (err, resp) => {
-            should(err).not.be.ok;
-            should(resp).be.ok;
+            should(err).not.be.ok();
+            should(resp).be.ok();
             should(resp).be.Array;
             should(resp).have.lengthOf(1);
             next();
@@ -46,8 +46,8 @@ describe('Connector query', () => {
             where: { '$gt': { Age: 80 } }
         };
         _model.query(options, (err, resp) => {
-            should(err).not.be.ok;
-            should(resp).be.ok;
+            should(err).not.be.ok();
+            should(resp).be.ok();
             should(resp).be.Array;
             should(resp).have.lengthOf(0);
 

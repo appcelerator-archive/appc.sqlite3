@@ -12,8 +12,8 @@ describe('FindAll', () => {
     it("should findAll", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
         _model.findAll((err, result) => {
-            should(err).not.be.ok;
-            should(result).be.ok;
+            should(err).not.be.ok();
+            should(result).be.ok();
             next();
         });
     });
@@ -22,8 +22,8 @@ describe('FindAll', () => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
         _model.findAll((err, result) => {
             let _resData = ['name', 'age', 'email'];
-            should(err).not.be.ok;
-            should(result).be.ok;
+            should(err).not.be.ok();
+            should(result).be.ok();
             result.forEach((item) => {
                 var _item = item.toPayload();
                 _resData.forEach((field) => {
