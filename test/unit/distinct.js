@@ -12,6 +12,8 @@ var should = require('should'),
 describe('Distinct', () => {
     var self = this,
         db = connect.setDatabase(connector.config);
+    var id,
+    __instance;
 
     it("should distinct objects", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
@@ -25,6 +27,8 @@ describe('Distinct', () => {
         _model.create(newModel, (_error, _instance) => {
             should(_error).be.not.ok();
             should(_instance).be.ok();
+            __instance = _instance;
+            id = _instance.getPrimaryKey();
         });
 
         _model.findAll(function (err, result) {
@@ -36,5 +40,13 @@ describe('Distinct', () => {
             next();
         });
 
+    });
+    after("should delete object", (next) => {
+        const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
+        _model.delete(__instance, (err, resp) => {
+            should(err).not.be.ok();
+            should(resp).be.ok();
+            next();
+        });
     });
 });

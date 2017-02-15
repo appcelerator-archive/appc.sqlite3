@@ -57,23 +57,4 @@ describe('Connector CREATE and UPDATE', () => {
             next();
         });
     });
-
-    it('should be able to delete all objects', (next) => {
-        const newModel = {
-            name: 'Jim',
-            age: 15
-        };
-        const __model = Arrow.Model.getModel('appc.sqlite3/Users');
-
-        __model.create(newModel, (_error, _instance) => {
-            should(_error).be.not.ok();
-            should(_instance).be.ok();
-        });
-
-        __model.deleteAll(function (err, resp) {
-            should(err).not.be.ok();
-            should(resp).be.ok();
-            next();
-        });
-    });
 });
