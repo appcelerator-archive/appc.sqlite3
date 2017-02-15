@@ -40,7 +40,7 @@ describe('Query Api tests', () => {
 
         request(options, function (err, response, body) {
             should(body.success).be.true();
-            should(err).be.not.ok;
+            should(err).not.be.ok();
             should(response.statusCode).be.equal(200);
             next();
         });

@@ -46,7 +46,7 @@ describe('FindByID Api tests', () => {
         request(options, function (err, response, body) {
             let resData = body.snail;
             should(body.success).be.true();
-            should(err).be.not.ok;
+            should(err).not.be.ok();
             should(response.statusCode).be.equal(200);
 
             expectedData.forEach((item) => {
@@ -65,11 +65,11 @@ describe('FindByID Api tests', () => {
         };
 
         request(options, function (err, response, body) {
-            should(body.success).be.true;
+            should(body.success).be.true();
             should(response.statusCode).be.equal(200);
-            should(err).be.not.ok;
+            should(err).not.be.ok();
             // Response data should be an empty array when invalid ID is passed
-            (body.snail).should.be.empty;
+            (body.snail).should.be.empty();
             next();
         });
     });

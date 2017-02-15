@@ -38,7 +38,7 @@ describe('FindAll Api tests', () => {
 
         request(options, function (err, response, body) {
             should(body.success).be.true();
-            should(err).be.not.ok;
+            should(err).not.be.ok();
             should(response.statusCode).be.equal(200);
             next();
         });
@@ -55,7 +55,7 @@ describe('FindAll Api tests', () => {
         request(options, function (err, response, body) {
             should(body.success).be.true();
             should(response.statusCode).be.equal(200);
-            should(err).be.not.ok;
+            should(err).not.be.ok();
 
             body.snails.forEach(function (resData) {
                 let expectedProperties = ['id', 'name', 'age', 'email'];

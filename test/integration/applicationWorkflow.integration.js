@@ -38,7 +38,7 @@ describe('Application workflow tests', () => {
                 auth: auth,
                 json: true
             }, function (err, response, body) {
-                should(body.success).be.true;
+                should(body.success).be.true();
                 next();
             });
         });
