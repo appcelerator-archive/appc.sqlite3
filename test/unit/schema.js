@@ -24,7 +24,7 @@ describe('Schema', () => {
         should(utils.getTables(db, function (err, tables) {
             should(err).be.not.ok();
             should(tables).is.Array;
-            (tables.length).should.be.equal(5);
+            (tables.length).should.be.equal(4);
         }));
         next();
     });
