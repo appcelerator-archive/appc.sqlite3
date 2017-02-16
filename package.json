@@ -1,13 +1,14 @@
 {
   "name": "appc.sqlite3",
-  "description": "",
+  "description": "An Arrow connector for the popular filebased SQL database",
   "version": "1.0.0",
   "author": "Alexandrina Karakehayova",
-  "license": "",
-  "framework": "none",
+  "license": "Apache-2.0",
+  "framework": "arrow",
   "keywords": [
     "appcelerator",
-    "arrow"
+    "arrow",
+    "axway"
   ],
   "engines": {
     "node": "7.3.0"
