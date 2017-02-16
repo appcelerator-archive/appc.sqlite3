@@ -14,6 +14,7 @@ describe('Update Api tests', (done) => {
         server,
         urlToHit,
         location,
+        locationNewEntry,
         options,
         createData = { name: 'createSnail', age: 60, email: 'existingSnailEmail@abv.bg' },
         formData = { name: 'updatedSnail', age: 61, email: 'updatedSnailEmail@abv.bg' };
@@ -83,6 +84,46 @@ describe('Update Api tests', (done) => {
         done;
     });
 
+    describe('Correct data tests - insert new record', (done) => {
+        var upsertData = { id: 5, name: 'New Snail', age: 10, email: 'new.snail@abv.bg' };
+        
+        before(function (next) {
+            options = {
+                "url": urlToHit + '/api/appc.sqlite3/snails/upsert',
+                "method": "POST",
+                "headers": {
+                    'content-type': 'multipart/form-data'
+                },
+                "formData": upsertData,
+                "auth": auth,
+                "json": true
+            };
+            next();
+        });
+
+        it('should insert a new snail', function (next) {
+            request(options, function (err, response, body) {
+                should(response.statusCode).be.equal(204);
+                next();
+            });
+        });
+
+        it('should update the correct record with the correct data', function (next) {
+            request({
+                "url": urlToHit + '/api/appc.sqlite3/snails/5',
+                "method": "GET",
+                "auth": auth,
+                "json": true
+            }, function (err, response, body) {
+                should(response.statusCode).be.equal(200);
+                should(body.snail.age).be.equal(10);
+                should(body.snail.email).be.equal('new.snail@abv.bg');
+                next();
+            });
+        });
+        done;
+    });
+
     describe('Incorrect data tests', (done) => {
         beforeEach(function (next) {
             options = {
@@ -117,6 +158,16 @@ describe('Update Api tests', (done) => {
     after(function (next) {
         request({
             "url": urlToHit + location,
+            "method": "DELETE",
+            "bodyParams": {},
+            "auth": auth,
+            "json": true
+        }, function (err, response, body) {
+            //next();
+        });
+
+         request({
+            "url": urlToHit + '/api/appc.sqlite3/snails/5',
             "method": "DELETE",
             "bodyParams": {},
             "auth": auth,

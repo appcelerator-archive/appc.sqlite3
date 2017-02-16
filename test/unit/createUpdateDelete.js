@@ -45,6 +45,39 @@ describe('Connector CREATE and UPDATE', () => {
         _model.upsert(id, newObject, (err, resp) => {
             should(err).not.be.ok();
             should(resp).be.ok();
+            should(resp.name).equal("Rachael");
+            next();
+        });
+    });
+
+      it("should be able to update only specific properties of an object", (next) => {
+        const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
+
+       var updatedObject = {
+            name: 'John'
+        };
+
+        _model.upsert(id, updatedObject, (err, resp) => {
+            should(err).not.be.ok();
+            should(resp).be.ok();
+            should(resp.name).equal("John");
+            should(resp.email).equal("rachael@snail.com");
+            next();
+        });
+    });
+
+    it("should be able to update a non existing object", (next) => {
+        const _model = Arrow.Model.getModel('appc.sqlite3/Flowers');
+        var table_name = 'Flowers';
+        newObject = {
+            name: "Rose",
+            family: "Roses"
+        };
+
+        var id = 100;
+        _model.upsert(100, newObject, function (err, resp) {
+            should(err).not.be.ok();
+            should(resp).be.ok();
             next();
         });
     });
