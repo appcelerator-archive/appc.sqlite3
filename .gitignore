@@ -41,5 +41,7 @@ jspm_packages
 
 
 # disregard all config files
+data/
 data/test.db
+data/forest.db
 
