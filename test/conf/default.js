@@ -9,8 +9,6 @@
  *
  * This is a JavaScript file (instead of JSON) so you can also perform logic in this file if needed.
  */
-var path = require('path');
-
 module.exports = {
 	// these are your generated API keys.  They were generated uniquely when you created this project.
 	// DO NOT SHARE these keys with other projects and be careful with these keys since they control
