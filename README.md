@@ -53,6 +53,8 @@ var User = Arrow.Model.extend('user', {
 });
 ```
 
+#### NOTE: To ensure the correct functianality of the connector, make sure each table in the database has a primary Key field `id` or `ID` which is AUTOINCREMENT-ed!
+
 ### Query operators currently supported:
 #### Syntax: {"$lt": {"field": value} }
 Example:   {"$eq":{"username":"John"},{"age":20}}
