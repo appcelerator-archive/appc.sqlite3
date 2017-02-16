@@ -1,7 +1,7 @@
 /* global init, assertFailure, dump, state */
 'use strict';
 
-require('../_init');
+require('../_base');
 
 var should = require('should'),
     request = require('request'),

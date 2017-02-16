@@ -1,6 +1,6 @@
 'use strict';
 
-require('../_init');
+require('../_base');
 
 var should = require('should'),
     _ = require('underscore'),
