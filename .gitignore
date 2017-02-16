@@ -41,5 +41,5 @@ jspm_packages
 
 
 # disregard all config files
-test.db
-data
+data/test.db
+
