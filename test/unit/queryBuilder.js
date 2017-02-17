@@ -3,9 +3,6 @@
 
 require('../_base');
 const should = require('should'),
-    _ = require('lodash'),
-    Arrow = require('Arrow'),
-    schema = require('../../lib/utils/schema'),
     connect = require('../../lib/utils/connectAndDisconnect'),
     queryBuilder = require('../../lib/utils/queryBuilder');
 
