@@ -1,6 +1,14 @@
 {
-	"type":"connector",
-	"group":"arrow",
-	"dependencies": {
-	}
+	"type": "connector",
+	"group": "arrow",
+	"access": "public",
+	"owners": [
+		"ngeorgieva@axway.com",
+		"akarakehayova@axway.com",
+		"mvasilev@axway.com"
+	],
+	"assets": {
+	"small_logo": "docs/sqlite3.png"
+	},
+	"dependencies": {}
 }

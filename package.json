@@ -1,38 +1,40 @@
 {
-    "name": "appc.sqlite3",
-    "description": "",
-    "version": "1.0.0",
-    "author": "Alexandrina Karakehayova",
-    "license": "",
-    "framework": "none",
-    "keywords": [
-        "appcelerator",
-        "arrow"
-    ],
-    "engines": {
-        "node": "7.3.0"
-    },
-    "repository": {},
-    "private": true,
-    "dependencies": {
-        "async": "^1.5.0",
-        "lodash": "^3.10.1",
-        "pkginfo": "^0.3.1",
-        "semver": "^5.0.3",
-        "sqlite3": "^3.1.8"
-    },
-    "devDependencies": {
-        "grunt": "^0.4.5",
-        "grunt-appc-js": "^1.0.19",
-        "grunt-contrib-clean": "^0.7.0",
-        "grunt-mocha-istanbul": "^3.0.1",
-        "istanbul": "^0.4.1",
-        "mocha": "^2.3.4",
-        "should": "^8.0.2",
-        "arrow": "^*"
-    },
-    "scripts": {
-        "start": "appc run",
-        "test": "grunt"
-    }
+  "name": "appc.sqlite3",
+  "description": "An Arrow connector for the popular filebased SQL database",
+  "version": "1.1.0",
+  "author": "Alexandrina Karakehayova",
+  "license": "Apache-2.0",
+  "framework": "arrow",
+  "keywords": [
+    "appcelerator",
+    "arrow",
+    "axway"
+  ],
+  "engines": {
+    "node": "7.3.0"
+  },
+  "repository": {},
+  "private": true,
+  "dependencies": {
+    "async": "^1.5.0",
+    "lodash": "^3.10.1",
+    "pkginfo": "^0.3.1",
+    "semver": "^5.0.3",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "arrow": "^*",
+    "grunt": "^0.4.5",
+    "grunt-appc-js": "^1.0.19",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-mocha-istanbul": "^3.0.1",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "request": "^2.79.0",
+    "should": "^8.0.2"
+  },
+  "scripts": {
+    "start": "appc run",
+    "test": "grunt"
+  }
 }
