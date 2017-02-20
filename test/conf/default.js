@@ -87,7 +87,7 @@ module.exports = {
 	// your connector configuration goes here
 	connectors: {
 		'appc.sqlite3': {
-			db: 'forest.db',
+			db: 'forest_copy.db',
 			path: '/test/data/',
 			modelAutogen: true,
 			generateModelsFromSchema: true
