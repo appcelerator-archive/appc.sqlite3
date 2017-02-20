@@ -13,7 +13,7 @@ describe('Distinct', () => {
     var self = this,
         db = connect.setDatabase(connector.config);
     var id,
-    __instance;
+        __instance;
 
     it("should distinct objects", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
@@ -29,16 +29,17 @@ describe('Distinct', () => {
             should(_instance).be.ok();
             __instance = _instance;
             id = _instance.getPrimaryKey();
+
+            _model.findAll(function (err, result) {
+                should(err).be.not.ok();
+                _model.distinct('name', {}, (error, data) => {
+                    should(error).be.not.ok();
+                    should(data.length < result.length).be.true();
+                    next();
+                });
+            });
         });
 
-        _model.findAll(function (err, result) {
-            should(err).be.not.ok();
-            _model.distinct('name', {}, (error, data) => {
-                should(error).be.not.ok();
-                should(data.length < result.length).be.true();
-            });
-            next();
-        });
 
     });
     after("should delete object", (next) => {

@@ -44,7 +44,7 @@ describe('Application workflow tests', () => {
         });
 
         it('should fail with wrong auth params', (next) => {
-            
+
             request({
                 method: 'GET',
                 uri: urlToHit,
@@ -100,8 +100,8 @@ describe('Application workflow tests', () => {
             should(body.success).be.false();
             should(body.error).be.equal('Not found');
             should(response.statusCode).be.equal(404);
+            next();
         });
-        next();
     });
 
 });

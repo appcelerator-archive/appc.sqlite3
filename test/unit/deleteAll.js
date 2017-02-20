@@ -21,12 +21,13 @@ describe('Connector DeleteAll', () => {
         __model.create(newModel, (_error, _instance) => {
             should(_error).be.not.ok();
             should(_instance).be.ok();
+
+            __model.deleteAll(function (err, resp) {
+                should(err).not.be.ok();
+                should(resp).be.ok();
+                next();
+            });
         });
 
-        __model.deleteAll(function (err, resp) {
-            should(err).not.be.ok();
-            should(resp).be.ok();
-            next();
-        });
     });
 });
