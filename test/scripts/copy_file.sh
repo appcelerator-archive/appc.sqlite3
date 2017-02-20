@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd ./test/data
-cat forest.db >> forest_copy.db
+cat forest.db >> test_database.db
