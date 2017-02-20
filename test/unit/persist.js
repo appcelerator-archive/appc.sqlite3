@@ -44,9 +44,9 @@ describe('Persist', () => {
 
                         persist.deleteOne(table_name, db, lastID, function (err, table) {
                             //cleaning the table
+                            next();
                         });
                     });
-                    next();
                 }
             });
         });
@@ -60,19 +60,17 @@ describe('Persist', () => {
                 return next(err);
             }
             else {
+                var lastID = this.lastID;
                 persist.update(table_name, this.lastID, db, updatedObject, function (err, data) {
                     should(err).not.be.ok();
+                    retrieve.findById(db, table_name, this.lastID, function (err, data) {
+                        (data.name).should.equal('updatedRosey');
+                        persist.deleteOne(table_name, db, data.id, function (err, table) {
+                            //cleaning the table
+                            next();
+                        });
+                    });
                 });
-
-                retrieve.findById(db, table_name, this.lastID, function (err, data) {
-                    (data.name).should.equal('updatedRosey');
-                });
-
-                persist.deleteOne(table_name, db, this.lastID, function (err, table) {
-                    //cleaning the table
-                });
-
-                next();
             }
         });
     });
@@ -88,9 +86,9 @@ describe('Persist', () => {
                     persist.deleteOne(table_name, db, this.lastID, function (err, data) {
                         schema.getTableLength(table_name, db, function (err, countAfter) {
                             (countAfter).should.be.equal(countBefore);
+                            next();
                         });
                     });
-                    next();
                 }
             });
         });
@@ -105,15 +103,14 @@ describe('Persist', () => {
             else {
                 schema.getTableLength(table_to_delete, db, function (err, countBefore) {
                     (countBefore).should.be.above(0);
-                });
 
-                persist.deleteAll(table_to_delete, db, function (err, data) {
-                    schema.getTableLength(table_to_delete, db, function (err, countAfter) {
-                        (countAfter).should.be.equal(0);
+                    persist.deleteAll(table_to_delete, db, function (err, data) {
+                        schema.getTableLength(table_to_delete, db, function (err, countAfter) {
+                            (countAfter).should.be.equal(0);
+                            next();
+                        });
                     });
                 });
-
-                next();
             }
         });
     });
