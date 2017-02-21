@@ -28,4 +28,16 @@ describe('Schema', () => {
         }));
         next();
     });
+
+    it('should get all fields for a table', (next) => {
+        var table_name = 'Snails';
+        var snails_fields = ['name', 'age', 'email'];
+
+        should(utils.getFieldsForTable(db, table_name, function (err, fields) {
+            var fields_data = _.values(fields);
+            var table_fields = _.keys(fields_data[0]);
+            should(_.isEqual(table_fields.sort(), snails_fields.sort())).be.true();
+            next();
+        }));
+    });
 });
