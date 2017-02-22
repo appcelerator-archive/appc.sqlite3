@@ -4,7 +4,7 @@ require('../_base');
 
 var should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     request = require('request');
 
 describe('FindAll Api tests', () => {

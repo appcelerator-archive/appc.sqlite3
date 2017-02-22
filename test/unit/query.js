@@ -5,7 +5,7 @@ require('../_base');
 
 const should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow');
+    Arrow = require('arrow');
 var connect = require('../../lib/utils/connectAndDisconnect');
 
 var connector = require('../connector.mock'),

@@ -7,7 +7,7 @@ var should = require('should'),
     connector = require('../connector.mock.js'),
     _ = require('lodash'),
     connect = require('../../lib/utils/connectAndDisconnect'),
-    Arrow = require('Arrow');
+    Arrow = require('arrow');
 
 describe('Find by ID', () => {
     var self = this;

@@ -4,7 +4,7 @@
 require('../_base');
 const should = require('should'),
     _ = require('lodash'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     schema = require('../../lib/utils/schema'),
     connect = require('../../lib/utils/connectAndDisconnect'),
     persist = require('../../lib/utils/persist'),

@@ -5,7 +5,7 @@ require('../_base');
 
 var should = require('should'),
     request = require('request'),
-    Arrow = require('Arrow');
+    Arrow = require('arrow');
 
 describe('Create Api tests', (done) => {
     init(this);

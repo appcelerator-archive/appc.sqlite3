@@ -4,7 +4,7 @@
 require('../_base');
 const should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     utils = require('../../lib/utils/schema'),
     connector = require('../connector.mock.js'),
     connect = require('../../lib/utils/connectAndDisconnect');

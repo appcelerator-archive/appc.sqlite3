@@ -3,7 +3,7 @@
 require('../_base');
 const should = require('should'),
     _ = require('lodash'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     connect = require('../../lib/utils/connectAndDisconnect');
 
 describe('Connect and Disconnect', (next) => {

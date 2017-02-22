@@ -4,7 +4,7 @@
 require('../_base');
 const should = require('should'),
     _ = require('lodash'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     connect = require('../../lib/utils/connectAndDisconnect'),
     retrieve = require('../../lib/utils/retrieve');
 

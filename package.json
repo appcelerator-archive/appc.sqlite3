@@ -36,7 +36,6 @@
   "scripts": {
     "start": "appc run",
     "test": "grunt",
-
     "pretest": "bash ./test/scripts/copy_file.sh",
     "posttest": "bash ./test/scripts/rename_file.sh"
   }
