@@ -34,6 +34,32 @@ describe('Connector CREATE and UPDATE', () => {
         });
     });
 
+    it('should use the default value if there is one', (next) => {
+        const __model = Arrow.Model.getModel('appc.sqlite3/Trees');
+        const testModel = {
+            name: 'Apple'
+        };
+        __model.create(testModel, (err, tree_instance) => {
+            should(err).be.not.ok();
+            should(tree_instance).be.ok();
+            var tree_id = tree_instance.getPrimaryKey();
+            should(tree_instance.age).equal(100);
+            next();
+        });
+    });
+
+    it('should not be able to create object without provided data for the required field', (next) => {
+        const __model = Arrow.Model.getModel('appc.sqlite3/Snails');
+        const testModel = {
+            age: 30,
+            email: 'test@snail.com'
+        };
+        __model.create(testModel, (err, _instance) => {
+            should(err).be.ok();
+            next();
+        });
+    });
+
     it("should be able to update objects", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
 
@@ -50,10 +76,10 @@ describe('Connector CREATE and UPDATE', () => {
         });
     });
 
-      it("should be able to update only specific properties of an object", (next) => {
+    it("should be able to update only specific properties of an object", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
 
-       var updatedObject = {
+        var updatedObject = {
             name: 'John'
         };
 
