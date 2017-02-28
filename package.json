@@ -1,7 +1,7 @@
 {
   "name": "appc.sqlite3",
   "description": "An Arrow connector for the popular filebased SQL database",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "author": "Alexandrina Karakehayova",
   "license": "Apache-2.0",
   "framework": "arrow",
