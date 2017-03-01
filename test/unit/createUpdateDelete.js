@@ -112,6 +112,27 @@ describe('Connector CREATE and UPDATE', () => {
         });
     });
 
+    it("should throw an error if no id provided", (next) => {
+        const _model = Arrow.Model.getModel('appc.sqlite3/Flowers');
+        var table_name = 'Flowers';
+        newObject = {
+            name: "Rose",
+            family: "Roses"
+        };
+
+        var expectedErrorMessage = 'You must provide a Model id and data Object, that will be persisted';
+
+        (function () {
+            _model.upsert('', newObject, function (err, resp) {
+                if (err) {
+                    throw err;
+                }
+            });
+        }).should.throw(expectedErrorMessage);
+
+        next();
+    });
+
     after("should be able to delete objects", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
         _model.delete(__instance, (err, resp) => {
