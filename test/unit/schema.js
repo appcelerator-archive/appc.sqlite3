@@ -40,4 +40,21 @@ describe('Schema', () => {
             next();
         }));
     });
+
+    it('should recognise the required fields of the model', (next) => {
+        const __model = Arrow.Model.getModel('appc.sqlite3/Snails');
+       for (var key in __model.fields) {
+                switch (key) {
+                    case 'name':
+                        should(__model.fields[key].required).be.true();
+                        break;
+                    case 'age':
+                        should(__model.fields[key].required).be.false();
+                        break;
+                    case 'email':
+                        should(__model.fields[key].required).be.false();
+                }
+            }
+        next();
+    });
 });

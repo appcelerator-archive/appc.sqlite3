@@ -72,6 +72,8 @@ describe('Connector CREATE and UPDATE', () => {
             should(err).not.be.ok();
             should(resp).be.ok();
             should(resp.name).equal("Rachael");
+            should(resp.age).equal(54);
+            should(resp.email).equal("rachael@snail.com");
             next();
         });
     });
@@ -104,6 +106,8 @@ describe('Connector CREATE and UPDATE', () => {
         _model.upsert(100, newObject, function (err, resp) {
             should(err).not.be.ok();
             should(resp).be.ok();
+            should(resp.name).equal("Rose");
+            should(resp.family).equal("Roses");
             next();
         });
     });
