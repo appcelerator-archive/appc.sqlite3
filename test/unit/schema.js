@@ -43,18 +43,28 @@ describe('Schema', () => {
 
     it('should recognise the required fields of the model', (next) => {
         const __model = Arrow.Model.getModel('appc.sqlite3/Snails');
-       for (var key in __model.fields) {
-                switch (key) {
-                    case 'name':
-                        should(__model.fields[key].required).be.true();
-                        break;
-                    case 'age':
-                        should(__model.fields[key].required).be.false();
-                        break;
-                    case 'email':
-                        should(__model.fields[key].required).be.false();
-                }
+        for (var key in __model.fields) {
+            switch (key) {
+                case 'name':
+                    should(__model.fields[key].required).be.true();
+                    break;
+                case 'age':
+                    should(__model.fields[key].required).be.false();
+                    break;
+                case 'email':
+                    should(__model.fields[key].required).be.false();
             }
+        }
         next();
+    });
+
+    it('should get field names', (next) => {
+        var table_name = 'Snails';
+        var table_fields = ['id', 'name', 'age', 'email'];
+        utils.getFieldsNames(db, table_name, function (err, names) {
+            should(table_fields).be.eql(names);
+            should(err).be.not.ok();
+            next();
+        });
     });
 });
