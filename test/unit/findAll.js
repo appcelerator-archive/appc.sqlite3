@@ -14,6 +14,7 @@ describe('FindAll', () => {
         _model.findAll((err, result) => {
             should(err).not.be.ok();
             should(result).be.ok();
+            should(result.length).equal(4);
             next();
         });
     });
