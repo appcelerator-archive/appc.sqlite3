@@ -49,4 +49,19 @@ describe('Find by ID', () => {
             next();
         });
     });
+
+    it("should throw an error if no id provided", (next) => {
+        const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
+        var expectedErrorMessage = 'Missing required "id"';
+
+        (function () {
+            _model.findByID('', function (err, resultModel) {
+                if (err) {
+                    throw err;
+                }
+            });
+        }).should.throw(expectedErrorMessage);
+
+        next();
+    });
 });

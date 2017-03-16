@@ -39,9 +39,19 @@ describe('Distinct', () => {
                 });
             });
         });
-
-
     });
+
+    it('should return empty array if the table is empty', (next)=>{
+    const _model = Arrow.Model.getModel('appc.sqlite3/Users');
+    var table_name = 'Users';
+    _model.distinct('name', {}, (error, rows)=>{
+        should(rows).be.an.Array();
+        should(rows).be.empty();
+        next();
+    });
+    });
+
+
     after("should delete object", (next) => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Snails');
         _model.delete(__instance, (err, resp) => {
