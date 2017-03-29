@@ -65,11 +65,9 @@ describe('FindByID Api tests', () => {
         };
 
         request(options, function (err, response, body) {
-            should(body.success).be.true();
-            should(response.statusCode).be.equal(200);
+            should(body.success).not.be.true();
+            should(response.statusCode).be.equal(404);
             should(err).not.be.ok();
-            // Response data should be an empty array when invalid ID is passed
-            (body.snail).should.be.empty();
             next();
         });
     });

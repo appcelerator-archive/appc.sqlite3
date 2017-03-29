@@ -148,7 +148,7 @@ describe('Update Api tests', (done) => {
         it('should not update with the wrong id', function (next) {
             options.url = urlToHit + '/api/appc.sqlite3/snails/someWrongId';
             request(options, function (err, response, body) {
-                should(response.statusCode).be.equal(500);
+                should(response.statusCode).be.equal(404);
                 next();
             });
         });
