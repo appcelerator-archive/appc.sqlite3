@@ -66,8 +66,8 @@ describe('FindByID Api tests', () => {
 
         request(options, function (err, response, body) {
             should(body.success).not.be.true();
+            should(response.body.message).be.equal("Not Found");
             should(response.statusCode).be.equal(404);
-            should(err).not.be.ok();
             next();
         });
     });
