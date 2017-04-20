@@ -66,8 +66,6 @@ Example:   {"$eq":{"username":"John"},{"age":20}}
 * $gte - matches entries with value of the field greater than or equal to (i.e. >=) the specified value
 * $ne - matches entries with value of the field not equal (i.e. !=) to the specified value 
 
-**Note** that the Model.Count method requires a WHERE parameter. If you want to get the count of all entries in a table, use the FindAll method and get the length of the result set.
-
 ## 4. Development
 
 > This section is for individuals developing the SQLite3 Connector and not intended for end-users.

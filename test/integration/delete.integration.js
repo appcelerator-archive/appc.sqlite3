@@ -63,9 +63,7 @@ describe('Detele Api tests', (done) => {
                 "method": "GET",
                 "auth": auth,
             }, function (err, response, body) {
-                should(response.statusCode).be.equal(200);
-                body = JSON.parse(body);
-                (body.flower).should.be.empty();
+                should(response.statusCode).be.equal(404);
                 next();
             });
         });

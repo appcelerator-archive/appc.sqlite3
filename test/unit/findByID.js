@@ -45,7 +45,6 @@ describe('Find by ID', () => {
         const _model = Arrow.Model.getModel('appc.sqlite3/Flowers');
         _model.findByID(26, (err, resultModel) => {
             should(err).not.be.ok();
-            should(resultModel).eql({});
             next();
         });
     });
