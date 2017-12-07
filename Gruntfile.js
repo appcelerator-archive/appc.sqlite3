@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 	});
 
 	// Load grunt plugins for modules.
-	grunt.loadNpmTasks('grunt-contrib-jshint');
+	//grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-mocha-istanbul');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
