@@ -18,7 +18,14 @@
 	"node": true,
 	"-W104": true,
 	"-W068": true,
-	"globals": {},
+	"globals": {
+		"describe": false,
+		"it": false,
+		"before": false,
+		"beforeEach": false,
+		"after": false,
+		"afterEach": false
+	},
     "sub":true,
     "esnext":true
 }

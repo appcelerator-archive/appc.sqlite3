@@ -1,3 +1,3 @@
 module.exports = {
-    config: require('./conf/default').connectors['appc.sqlite3']
-};
+  config: require('./conf/default').connectors['appc.sqlite3']
+}

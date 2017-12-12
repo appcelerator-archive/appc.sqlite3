@@ -19,82 +19,82 @@ module.exports = {
 	// NODE_ENV=production appc run
 	//
 	// production key, this is the key that will be required when you are running in production
-	apikey_production: 'R+XCW3d7TyIJFqjPOhF8IZDxFU78gHE+',
+  apikey_production: 'R+XCW3d7TyIJFqjPOhF8IZDxFU78gHE+',
 	// development key, this is the key that will be required when you are testing non-production (such as locally)
-	apikey_development: '7zRl1GCOuoX0K4RdI8iavg+2vKFBqB0w',
+  apikey_development: '7zRl1GCOuoX0K4RdI8iavg+2vKFBqB0w',
 	// preproduction key, this is the key that will be required when you are testing non-production (such as locally)
-	apikey_preproduction: 'pUwN6lDFI7IWH9EYe2U76ldoclSHq4S8',
+  apikey_preproduction: 'pUwN6lDFI7IWH9EYe2U76ldoclSHq4S8',
 
 	// by default the authentication strategy is 'basic' which will use HTTP Basic Authorization where the
 	// usename is the key and the password is blank.  the other option is 'apikey' where the value of the
 	// APIKey header is the value of the key.  you can also set this to 'plugin' and define the key 'APIKeyAuthPlugin'
 	// which points to a file or a module that implements the authentication strategy
-	APIKeyAuthType: 'basic',
+  APIKeyAuthType: 'basic',
 
 	// The number of milliseconds before timing out a request to the server.
-	timeout: 120000,
+  timeout: 120000,
 
 	// logging configuration
-	logLevel: 'debug', // Log level of the main logger.
-	logging: {
+  logLevel: 'debug', // Log level of the main logger.
+  logging: {
 		// location of the logs if enabled
-		logdir: './logs',
+    logdir: './logs',
 		// turn on transaction logs
-		transactionLogEnabled: true
-	},
+    transactionLogEnabled: true
+  },
 
 	// prefix to use for apis
-	apiPrefix: '/api',
+  apiPrefix: '/api',
 
 	// control the settings for the admin website
-	admin: {
+  admin: {
 		// control whether the admin website is available
-		enabled: true,
+    enabled: true,
 		// the prefix to the admin website
-		prefix: '/arrow',
+    prefix: '/arrow',
 		// the prefix for the public apidocs website
-		apiDocPrefix: '/apidoc',
+    apiDocPrefix: '/apidoc',
 		// if you set disableAuth, in production only your API docs will show up
-		disableAuth: false,
+    disableAuth: false,
 		// if you set disableAPIDoc, your API docs will not show up (regardless of disableAuth)
-		disableAPIDoc: false,
+    disableAPIDoc: false,
 		// if you set disableDefault404, Arrow will not register a default 404 handler
-		disableDefault404: false,
+    disableDefault404: false,
 		// set to true to allow the admin website to be accessed in production. however, you will still need a
 		// login unless disableAuth is false. if you set this to false, the admin website will not be enabled
 		// when in production (still respects enabled above)
-		enableAdminInProduction: false,
+    enableAdminInProduction: false,
 		// set the email addresses you want to be able to log in to the admin website
-		validEmails: ["akarakehayova@axway.com"],
+    validEmails: ['akarakehayova@axway.com'],
 		// set the organization ids you want to be able to log in to the admin website
-		validOrgs: [100094705]
-	},
+    validOrgs: [100094705]
+  },
 
 	// you can generally leave this as-is since it is generated for each new project you created.
-	session: {
-		encryptionAlgorithm: 'aes256',
-		encryptionKey: 'fY0Pdn66IHjyQM7BlIoNrsvBasdeeZZTXvpSzPDNaTE=',
-		signatureAlgorithm: 'sha512-drop256',
-		signatureKey: 'xXyw86lfGpZqdSKKT95YTn2SdsamJxROo3O2PWivkWohjqwVhq64bc/tXH0EY8uQZpqBvcYFXM15QbNNBb1pYQ==',
-		secret: 'zfUE6xEp+lPPs2yYqYJ98NFv25mY3qAS', // should be a large unguessable string
-		duration: 86400000, // how long the session will stay valid in ms
-		activeDuration: 300000 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
-	},
+  session: {
+    encryptionAlgorithm: 'aes256',
+    encryptionKey: 'fY0Pdn66IHjyQM7BlIoNrsvBasdeeZZTXvpSzPDNaTE=',
+    signatureAlgorithm: 'sha512-drop256',
+    signatureKey: 'xXyw86lfGpZqdSKKT95YTn2SdsamJxROo3O2PWivkWohjqwVhq64bc/tXH0EY8uQZpqBvcYFXM15QbNNBb1pYQ==',
+    secret: 'zfUE6xEp+lPPs2yYqYJ98NFv25mY3qAS', // should be a large unguessable string
+    duration: 86400000, // how long the session will stay valid in ms
+    activeDuration: 300000 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
+  },
 
 	// if you want signed cookies, you can set this value. if you don't want signed cookies, remove or make null
-	cookieSecret: 'iU0Q8gOOW8l38bNn7eWjIxsJb5RBCAY+',
+  cookieSecret: 'iU0Q8gOOW8l38bNn7eWjIxsJb5RBCAY+',
 
 	// your connector configuration goes here
-	connectors: {
-		'appc.sqlite3': {
-			db: 'forest.db',
-			path: './data/',
-			modelAutogen: true,
-			generateModelsFromSchema: true
-		}
-	},
+  connectors: {
+    'appc.sqlite3': {
+      db: 'forest.db',
+      path: './data/',
+      modelAutogen: true,
+      generateModelsFromSchema: true
+    }
+  },
 
 	// the date and time format to be used for admin-ui. Default is 'yyyy:mm:dd, HH:MM:ss.l'
 	// reference: https://github.com/felixge/node-dateformat
-	dateTimeFormat: 'yyyy:mm:dd, HH:MM:ss.l'
-};
+  dateTimeFormat: 'yyyy:mm:dd, HH:MM:ss.l'
+}
