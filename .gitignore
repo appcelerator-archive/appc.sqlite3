@@ -45,3 +45,12 @@ data/
 data/test.db
 data/forest.db
 
+# retire and nsp files
+scan-nsp.json
+scan-retire.json
+
+# Distribution directory
+dist
+
+
+

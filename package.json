@@ -1,7 +1,7 @@
 {
   "name": "appc.sqlite3",
   "description": "An Arrow connector for the popular filebased SQL database",
-  "version": "1.1.6-0",
+  "version": "1.1.6-1",
   "author": {
     "email": "support@axway.com",
     "name": "Axway R&D",
@@ -13,9 +13,6 @@
     "arrow",
     "axway"
   ],
-  "engines": {
-    "node": "7.3.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/appcelerator/appc.sqlite3"
