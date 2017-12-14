@@ -52,5 +52,8 @@ scan-retire.json
 # Distribution directory
 dist
 
+# Ignore package-lock
+package-lock.json
+
 
 
