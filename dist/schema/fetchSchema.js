@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Fetches the schema for your connector.
  *

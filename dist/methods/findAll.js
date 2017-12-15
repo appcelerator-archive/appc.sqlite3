@@ -1,3 +1,5 @@
+'use strict';
+
 var Arrow = require('arrow');
 var utils = require('../utils/retrieve');
 var index = require('../utils/index');

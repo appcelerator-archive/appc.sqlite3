@@ -3,9 +3,7 @@
 var Arrow = require('arrow'),
   assert = require('assert'),
   should = require('should'),
-  util = require('util'),
-  fs = require('fs'),
-  path = require('path')
+  util = require('util')
 
 global.dump = dump
 global.init = init
@@ -45,7 +43,7 @@ function assertFailure (err) {
   assert(err)
   should(err).be.an.Error
   should(err).have.keys('errorCode', 'docUrl', 'message', 'statusCode', 'reason', 'response', 'body')
-  should(err.errorCode).be.a.Number
+  should((err.errorCode).be.a).Number
   should(err.docUrl).be.a.String
   should(err.message).be.a.String
   should(err.statusCode).be.a.Number

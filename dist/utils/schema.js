@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   getSchema: getSchema,
   getTables: getTables,

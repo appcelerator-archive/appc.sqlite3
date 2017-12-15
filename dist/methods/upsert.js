@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Updates a model or creates the model if it cannot be found.
  * @param {Arrow.Model} Model The model class being updated.

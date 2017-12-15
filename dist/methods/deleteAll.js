@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Deletes all the data records.
  * @param {Arrow.Model} Model The model class being updated.

@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   stripName: stripName,
   getRootModelName: getRootModelName

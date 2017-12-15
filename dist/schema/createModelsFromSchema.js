@@ -1,3 +1,5 @@
+'use strict';
+
 var Arrow = require('arrow'),
     _ = require('lodash'),
     fs = require('fs');
@@ -14,8 +16,8 @@ exports.createModelsFromSchema = function () {
       predefinedModels = [];
 
   try {
-    fs.readdirSync(modelsDir).map(fileName => {
-      let __model = require(modelsDir + '/' + fileName);
+    fs.readdirSync(modelsDir).map(function (fileName) {
+      var __model = require(modelsDir + '/' + fileName);
       if (__model) {
         // register models name
         predefinedModels.push(__model.name);

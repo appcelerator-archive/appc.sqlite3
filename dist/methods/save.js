@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Updates a Model instance.
  * @param {Arrow.Model} Model The model class being updated.

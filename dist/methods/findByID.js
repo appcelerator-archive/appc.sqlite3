@@ -1,3 +1,5 @@
+'use strict';
+
 var utils = require('../utils/retrieve.js');
 var index = require('../utils/index');
 /**

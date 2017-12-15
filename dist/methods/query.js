@@ -1,3 +1,5 @@
+'use strict';
+
 var Arrow = require('arrow');
 var _ = require('lodash');
 var utils = require('../utils/retrieve');

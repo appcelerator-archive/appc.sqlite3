@@ -1,3 +1,5 @@
+'use strict';
+
 var utils = require('../utils/retrieve');
 var index = require('../utils/index');
 var _ = require('lodash');

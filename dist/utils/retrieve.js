@@ -1,3 +1,5 @@
+'use strict';
+
 var buildQuery = require('./queryBuilder');
 var utils = require('./index.js');
 
@@ -11,14 +13,14 @@ module.exports = {
 
 function findById(database, tableName, id, callback) {
   tableName = utils.stripName(tableName);
-  var queryStr = `SELECT * FROM ${tableName} WHERE ID = ?`;
+  var queryStr = 'SELECT * FROM ' + tableName + ' WHERE ID = ?';
 
   database.get(queryStr, [id], callback);
 }
 
 function findAll(database, tableName, callback) {
   tableName = utils.stripName(tableName);
-  var queryStr = `SELECT * FROM ${tableName}`;
+  var queryStr = 'SELECT * FROM ' + tableName;
 
   database.all(queryStr, callback);
 }

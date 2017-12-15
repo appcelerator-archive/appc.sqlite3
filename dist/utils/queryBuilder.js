@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (tableName, params, queryObject) {
   var selectQuery = '';
   var whereQuery = '';
@@ -8,7 +10,7 @@ module.exports = function (tableName, params, queryObject) {
   if (queryObject.sel && Object.keys(queryObject.sel).length > 0) {
     selectQuery += buildSelectQuery(queryObject, tableName);
   } else {
-    selectQuery += `SELECT * FROM ${tableName}`;
+    selectQuery += 'SELECT * FROM ' + tableName;
   }
 
   if (queryObject.where && Object.keys(queryObject.where).length > 0) {
@@ -36,11 +38,11 @@ function buildSelectQuery(queryObject, tableName) {
   var result = queryObject.distinct ? 'SELECT DISTINCT' : 'SELECT';
   Object.keys(queryObject.sel).forEach(function (key) {
     if (queryObject.sel[key]) {
-      result += ` ${key},`;
+      result += ' ' + key + ',';
     }
   });
   result = result.slice(0, -1);
-  result += ` FROM ${tableName}`;
+  result += ' FROM ' + tableName;
 
   return result;
 }
@@ -70,7 +72,7 @@ function buildWhereQuery(where, params) {
         result = processCommand(result, params, where.$ne, '!=');
         break;
       default:
-        result += ` ${key} = ?`;
+        result += ' ' + key + ' = ?';
         params.push(where[key]);
         break;
     }
@@ -81,7 +83,7 @@ function buildWhereQuery(where, params) {
 
 function processCommand(result, params, command, operator) {
   Object.keys(command).forEach(function (param) {
-    result += ` ${param} ${operator} ?`;
+    result += ' ' + param + ' ' + operator + ' ?';
     var value = command[param];
     params.push(value);
   });
@@ -100,7 +102,7 @@ function buildOrderByQuery(order) {
   }
 
   Object.keys(order).forEach(function (key) {
-    result += ` ${key} `;
+    result += ' ' + key + ' ';
     var orderKey = order[key];
     if (orderKey.toLowerCase() === 'asc') {
       result += 'ASC,';

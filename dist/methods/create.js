@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates a new Model or Collection object.
  * @param {Arrow.Model} Model The model class being updated.

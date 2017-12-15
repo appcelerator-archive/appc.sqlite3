@@ -1,3 +1,5 @@
+'use strict';
+
 // TODO: Reference the module to connect to your data store.
 var utils = require('../utils/connectAndDisconnect');
 
