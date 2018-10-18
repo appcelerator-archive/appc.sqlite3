@@ -45,8 +45,8 @@ data/
 data/test.db
 data/forest.db
 
-# retire and nsp files
-scan-nsp.json
+# retire and audit files
+scan-audit.json
 scan-retire.json
 
 # Distribution directory
